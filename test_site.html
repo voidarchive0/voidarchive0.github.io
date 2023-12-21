@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #191919;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            scroll-behavior: smooth;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            /* Adjust this value as needed */
+            text-align: center;
+        }
+
+        .button {
+            transition: transform 0.3s ease, background-image 0.3s ease, box-shadow 2s ease;
+            border-radius: 12px;
+            padding: 5px 10px;
+            font-size: 20px;
+            border: none;
+            background-color: #ffffff;
+            animation: pulse2 2s infinite;
+        }
+
+        .button:hover {
+            transform: scale(1.5);
+            box-shadow: 0 0 10px #ff7e5f, 0 0 15px #feb47b;
+            background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-image 0.3s ease;
+        }
+
+        @keyframes pulse2 {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .centered-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 2vw;
+            font-family: 'Arial', sans-serif;
+            color: #dedede;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            user-select: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="centered-text">
+        Hello, I'm void. I'm a developer that likes to make things.
+        <div class="button-container">
+            <button class="button" onclick="location.href='https://github.com';">GitHub</button>
+        </div>
+    </div>
+
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js',
+            {
+                "particles": {
+                    "number": {
+                        "value": 655,
+                        "density": {
+                            "enable": true,
+                            "value_area": 5000
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 12
+                        },
+                    },
+                    "size": {
+                        "value": 4,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab" // Change this from "repulse" to "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 160,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+    </script>
+</body>
+
+</html>
